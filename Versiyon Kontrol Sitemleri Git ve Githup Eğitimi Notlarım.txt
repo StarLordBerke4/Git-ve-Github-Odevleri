@@ -1,0 +1,129 @@
+Git ve Githup Dersi Notlarım (ATıl HOCA)
+========================================
+Git Nedir?
+-Git açık kaynaklı olarak geliştirilmiş bir "versiyon kontrol sistemidir".
+-Sektörde rakipleri vardır. Ancak en yaygın olarak sektörde kullanılan versiyon kontrol sistemidir.
+-Bir yazılım projesi geliştirilirken, kullanılması gereken bir sistemdir.
+-2005 yılında  "Linus Torvalds" tarafından geliştirilmiştir.
+-Açık Kaynaklıdır (Geliştirilmesine günümüzde dahi katkıda bulanabiliriz anlamına gelir.)
+-Yazılım sektöründe %90 oranında git kullanılır. Versiyon Kontrol Sistemi olarak.
+
+$ git ==) Git komudlarının olduğu listeyi açar. Git yardım dökümanlarının olduğu listeyi getirir ekrana.
+$ git --version ==) Git in çalışmakta olduğu versiyonu ekrana getirir. Ör;"git version 2.39.0.windows.2"
+$ clear ==) Tüm verileri temizler ekrandaki.
+
+Terminal Komutları
+==================
+$ ls ==) Dosya dökümanlarını ve klasörleri gösterir bize.
+$ pwd ==) Bulunduğumuz klasörü gösterir.
+$ cd ==) "$ cd" komutu istediğimiz klasöre gitmek (girmek) için kullanılır. "$ cd Documents" dersek döküman klasörüne gideriz. Ve "$ ls" komutu çalıştırıp döküman klasörü içindeki diğer klasörleri görebiliriz.
+Klasör değitir anlamına gelir cd komutu.
+$ cd .. ==) Bir önceki klasöre gelmek için kullanılır.
+
+$ mkdir ==) Bir klasör oluşturmaya yarayan komuttur. Ör; " $ mkdir GitKursu" . GitKursu oluşturmak istediğimiz klasör adıdır.
+$ touch ==) Dosya oluşturmaya yarayan komuttur. Ör; " $ touch not.txt " Metin belgesi oluşturmaya yarayan komut.
+$ rm ==) Dosyayı kaldırma/ silme için kullanılır. Ör; "$ rm not.txt" not dosyası bu örnekte temizlenir.
+$ rm -rf ==) Klasörü Silmeye Yarar. Ör; " $ rm -rf GitKursu" GitKursu isimli klasörü temizler.
+
+Kullanıcı Adı ve EMail Girişi Komutları
+=======================================
+$ git config --global user.name "Berke Mert Ozturk" ==) Kullanıcının ismini değiştirmeye yarayan komut.
+$ git config user.name ==) Teyit etme işlemi gerçekleşir.
+$ git config --global user.email deneme1996@hotmail.com  ==) Kullanıcı mail adresini değiştirmek için kullanılır bu komut.
+$ git config user.email ==) Teyit etme işlemi için kullanılır.
+
+Git Temelleri
+=============
+Git Görselleştirme
+
+Ör;
+
+Arayüz Tasarımı ---- Giriş Ekranı Yapımı ---- Veri Tabanı Bağlantısı Yapıldı --- Çıkış Fonksiyonu Yazılıdı  ----- Resim Paylaşma Fonksiyonu
+-----------------------------------------------------------------------------------------------------------                                   Branch (Farklı İş Kollarında Çalışma)
+                                                                                                            ----- Mesajlaşma Fonksiyonu
+                                           Commit (Kaydet)
+
+-Proje geliştirme sırasında yapılan her bir işlemin kayıt edilmesine "commit" denir. Commit git'de bir komuttur.
+-Proje geliştirme sürecinde farklı iş kollarında çalışmaya ise "branch" denir.
+
+Git Komutları
+=============
+$ git status ==) Git'in güncel durumunu göstermeye yarar.
+$ git init ==) Git'i klasöre bağlamayı yarar. Projeye dair yapılan tüm veriler burada tutulur. "Repository (proje kütüphanesi)" olarak. Not: Git varsa yanlışlıkla çalıştırmaktan kaçınmak lazım.
+$ git add ==) Yeni dosya oluşturmaya yarar. Ayrıca mevcut dosyları git e ekler. Ör; "$ git add ilkproje.txt" txt dosyasını git'e ekledik.
+$ git add . ==) Dosyalarda yapılan tüm değişiklikleri ekleyecektir.
+$ git commit ==) Komutu ile Repository (kütüphaneye) dosyalar kayıt edilir.
+$ git commit -m ==) Komutu ile mesaj eklenir kayıt esnasında. Ör; " $ git commid -m "ilkproje dosyası oluşturuldu."
+$ git log ==) Commit lerin durumunu gösterir bize. Commit hakında bilgi verir. Kim yazdı ne zaman yazdı gibi bilgiler verir.
+$ git restore ==) Geri alma en son commit'e geri dönmeyi sağlar. Ör; "$ git restore ilkbolum.txt" dersek bu commit e geri döneriz.
+
+gitignore ==) Git içine almayacağımız dosyaları belirlememizi sağlar. Gizli kalmasını istediğimiz dosyalar için kullanılır.
+$ git touch .gitignore ==) Komutu kullanılarak oluşturulur.
+
+Git Branch (Farklı İş Kolları Projedeki)
+===========
+HEAD ==) Proje içindeki güncel durumu yerimi gösterir. Projede bulunduğumuz yer.
+$ git branch ==) Komutu ile yeni bir iş kolu (branch) açarız projede. Ayrıca proje içinde yer alan branch'leri sıralar. Ör; "$ git branch feat" isimli bir iş kolu oluşturalım.
+$ git commit ==) Komutu ile Repository (kütüphaneye) dosyalar kayıt edilir.
+$ git switch ==) Branchler arasında geçiş yapmak için kullanılır. Mesela switch komut ile ana commit olan "Master" 'a geri döneriz. Ör: " $ git switch master" komutu ile dönüş sağlarız.
+$ git merge ==) Çalıştığımız 2 ayrı veya daha fazla iş kolunu birleştirebilirz. Ör; "$ git merge feat" dersek iş kollları birleşir.
+
+Fast Forwarding ==) Terimi ile mevcut iş kolunda (branch) çalışmayı tamamen bırakıp yeni bir iş koluna (feat branch) geçebilir ve en sonunda bu iş kolunu ana iş koluna bağlayabiliriz.
+
+$ git stash ==) Komutu ile git kendi içinde commit' leri saklar ve istediğimiz zaman geri alırız. Yaptığımız değişikliklikleri kaybetmemek için kullanılır. Özel ıd verir ve bu şkilde saklar.
+$ git stash pop ==) Komutu ile stash'i geri alırız. Zuladan dışarı atmak anlamına gelir "pop".
+$ git stash list ==) Zulamda sakladığım tüm dosyaları ekrana yazdırır.
+$ git stash apply ==) Tek tek eklmede yapabiliz zulamıza. Ör; "$ git stash stash@{0}" yazarak satece 1 slash ekleyebiliriz.
+$ git stash clear ==) Komutu bütün listeleri bütün "stash" leri temizleyebiliriz.
+
+Geçmişe Dönme
+=============
+$ git checkout ==) Komutu commit'ler arası geçiş yapmak için kullanılır. " Ör; $ git checkout 06acbd351ecce803eb23116e1664a5a6f9977252 " komuta id yi girerek istenilen commit e dönüş sağlayabiliriz.
+$ git reset ==) Komutu belirlenen commitleri silmeye yarar. Ancak proje dosyasındaki verileri silmez. "Ör; $ git reset 06acbd351ecce803eb23116e1664a5a6f9977252 "
+$ git reset --hard ==) Komutu ise hem atıllan commit leri hemde proje dosyası içindeki ilgili verileri temizler. "Ör; $ git reset --hard 06acbd351ecce803eb23116e1664a5a6f9977252 "
+$ git revert ==) Komutu istenmeyen commitler silindikten sonra aynı branch ten devam etmeyi sağlar. Not: Commitler silinmez git log da tutulmaya devam eder. Ör: $ git revert 06acbd351ecce803eb23116e1664a5a6f9977252 "
+$ git diff ==) Dosyalar ve commitler üzerindeki farkları bize gösterir. Not:" $ git status" komutundan sonra kullanılması önerilir. ÖNEMLİ: "$ git diff HEAD" şeklinde de kullanılabilir.
+$ git diff master feat ==) iki branch arasındaki farkı bize gösterir.
+$ git rebase ==) Master commit lerini sıralayıp profe içinde çalışılan diğer branclerdeki seçtiğimiz commit leri alıp master commit lerinin ardına sıralamaya yarar.
+$ git branch -r ==) Komutu çalıştırarak "remote" durumundaki branch leri görebiliriz.
+
+-Aslında burda tarih sıralmasını git log lardaki tarih sıralamasını düzenlememize olanak tanır.
+
+GitHub
+======
+Githup Nedir?
+-Githup Web tabanlı çalışan bir sistemdir.
+-Projelerimizin tutulduğu bir platformdur.
+-Açık tabanlı geliştirilen projelerde çalışmak için bire bir dir.
+-Git commit ve branchlerini görüntüleyebildiğimiz bir servis.
+-Bir Yazılım projesinde çalışırken ortak bir projede çalışmayı kolaylaştırır.
+-(Gitlab) github alternatifi bir platformdur.
+
+Profilde yer alan bölümler
+-overview ===) Bu bölüm Öne çıkan projeleri ifade eder.
+-Repositories ==) Bütün kütüphanelerimizi görmemimize yarar.
+-Star ==) Bir projeyi takip edip daha sonra ulaşmak istediğimiz projelere ulaşmayı sağlar.
+
+-Explore ==) Bölümü yeni proje kütüphaneleri ve yeni insanlar keşfetmek için kullanılır.
+
+-Pull Request ==) Proje dosyalarının github'da kıyaslanması anlamına gelir. Aynı zamanda branch leri birbirine bağlamamızada yarar. Kodları birleştirebiliriz kısaca.
+
+$ git branch -r ==) Komutu çalıştırarak "remote" durumundaki branch leri görebiliriz.
+$ git fetch ===) Yapmış olduğumuz değişiklikleri local 'e getirmeye yarar. Ör;" $ git fetch origin master " şeklinde kullanabiliriz.
+$ git pull ===) $ git pull = git fetch + git merge anlamına gelir. Değişiklikleri direkt benim branch imin içine gömme anlamına gelir. ör; $ git pull origin master
+
+$ git checkout ==) Komutu ile Remote Branchlere geçeriz. Ör; $ git checkout origin/master " şeklinde örnek verebiliriz.
+
+$ git clone ==) Komutu repoları bilgisayarımıza klonlamak için kullanırız.
+
+Fork ==) Yolları ayırmak anlamına gelir. Githup da bir repoyu seçip kendi repomuza ekleyip kullanmak anlamına gelir.
+
+Kaynaklar:
+==========
+
+-Readme.MD dosyalarını düzenleyip etkili bir github profili yapmak için " Markdown Cheatsheet" aramasını yaparak kullanım talimatlarını incelyebiliriz.
+ 
+-https://www.markdownguide.org/cheat-sheet/
+-https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+-https://towardsdatascience.com/the-ultimate-markdown-cheat-sheet-3d3976b31a0
+-https://www.freecodecamp.org/news/markdown-cheatsheet/
